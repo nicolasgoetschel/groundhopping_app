@@ -34,3 +34,13 @@ def select(id):
         league = league_repository.select(result['league_id'])
         ground = Ground(result['name'], result['team'], result['location'], result['visited'], result['id'])
     return ground
+
+def delete_all():
+    sql = "DELETE  FROM grounds"
+    run_sql(sql)
+
+
+def delete(id):
+    sql = "DELETE  FROM grounds WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

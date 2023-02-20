@@ -33,3 +33,12 @@ def select(id):
         league = League(result['name'], result['logo'], result['grounds'], result['id'])
     return league
 
+def delete_all():
+    sql = "DELETE  FROM leagues"
+    run_sql(sql)
+
+
+def delete(id):
+    sql = "DELETE  FROM leagues WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
