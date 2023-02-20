@@ -21,3 +21,15 @@ def select_all():
         league = League(row['name'], row['logo'], row['grounds'], row['id'] )
         leagues.append(league)
     return leagues
+
+def select(id):
+    league = None
+    sql = "SELECT * FROM leagues WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        country = country_repository.select(result['country_id'])
+        league = League(result['name'], result['logo'], result['grounds'], result['id'])
+    return league
+

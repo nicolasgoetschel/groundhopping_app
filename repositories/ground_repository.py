@@ -23,3 +23,14 @@ def select_all():
         ground = League(row['name'], row['team'], row['location'], row['capacity'], row['visited'], row['id'] )
         grounds.append(ground)
     return grounds
+
+def select(id):
+    ground = None
+    sql = "SELECT * FROM grounds WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        league = league_repository.select(result['league_id'])
+        ground = Ground(result['name'], result['team'], result['location'], result['visited'], result['id'])
+    return ground

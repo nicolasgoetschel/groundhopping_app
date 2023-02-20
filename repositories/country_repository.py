@@ -23,4 +23,15 @@ def select_all():
         countries.append(country)
     return countries
 
+
+def select(id):
+    country = None
+    sql = "SELECT * FROM countries WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        country = Country(result['name'], result['flag'], result['leagues'], result['id'])
+    return country
+
     
