@@ -36,7 +36,7 @@ league_repository.save(league_3)
 # Scottish Premiership
 ground_1 = Ground('Pittodrie Stadium', 'Aberdeen F.C.', 'Aberdeen', league_1, 20866, False)
 ground_repository.save(ground_1)
-ground_2 = Ground('Celtic Park', 'Celtic F.C.', 'GHlasgow', league_1, 60411, False)
+ground_2 = Ground('Celtic Park', 'Celtic F.C.', 'Glasgow', league_1, 60411, False)
 ground_repository.save(ground_2)
 ground_3 = Ground('Tannadice Park', 'Dundee United F.C.', 'Dundee', league_1, 14223, False)
 ground_repository.save(ground_3)

@@ -22,7 +22,7 @@ def select_all():
     
     for row in results:
         league = league_repository.select(row['league_id'])
-        ground = Ground(row['name'], row['team'], row['location'], league, row['visited'], row['id'])
+        ground = Ground(row['name'], row['team'], row['location'], league, row['capacity'], row['visited'], row['id'])
         grounds.append(ground)
     return grounds
 
@@ -34,7 +34,7 @@ def select(id):
     if results:
         result = results[0]
         league = league_repository.select(result['league_id'])
-        ground = Ground(result['name'], result['team'], result['location'], league, result['visited'], result['id'])
+        ground = Ground(result['name'], result['team'], result['location'], league, result['capacity'], result['visited'], result['id'])
     return ground
 
 def delete_all():

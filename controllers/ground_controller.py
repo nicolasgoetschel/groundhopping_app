@@ -14,9 +14,7 @@ def show_all():
 
 
 # View One
-@grounds_blueprint.route("/grounds/<ground_id>/grounds/<id>")
-def show(ground_id, id):
-    ground = ground_repository.select(id)
-    league = league_repository.select(ground.league_id)
-    # country = country_repository.select(league.country_id)
-    return render_template("grounds/show.html", ground=ground, league=league)
+@grounds_blueprint.route("/grounds/<id>")
+def show(id):
+    ground = ground_repository.select(int(id))
+    return render_template("grounds/show.html", ground=ground)

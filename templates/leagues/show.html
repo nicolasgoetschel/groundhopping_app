@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+  <div>
+
+    <h1>{{ league.name }}</h1>
+    <h2>{{ league.logo }}</h2>
+    <h4>All the {{league.name}} Grounds:</h4>
+    {% for ground in grounds  %}
+    {% if  league.id == ground.league.id %}
+        
+    
+    <a href="/grounds/{{ground.id}}">{{ ground.name }}</a>
+    <h5>{{ ground.capacity }}</h5>
+    {% endif %}
+    {% endfor %}
+      
+  </div>
+</main>
+{% endblock content %}

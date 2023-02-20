@@ -3,10 +3,12 @@
 
 <main>
   <div>
-    {% for country in countries  %}
+    {% for league in leagues  %}
     <h1>{{ league.country.name }}</h1>
-    <h2>{{ country.name }}</h2>
-    <h2>{{ country.logo }}</h2>
+    <a href="/leagues/{{league.id}}">
+    <h2>{{ league.name }}</h2>
+  </a>
+    <h2>{{ league.logo }}</h2>
       
     {% endfor %}
   </div>

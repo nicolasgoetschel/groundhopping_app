@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+  <div>
+
+    <h1>{{ country.name }}</h1>
+    <h2>{{ country.flag }}</h2>
+    <h4>All the {{country.name}} leagues:</h4>
+    {% for league in leagues  %}
+    {% if  country.id == league.country.id %}
+        
+    
+    <a href="/leagues/{{league.id}}">{{ league.name }}</a>
+    <h5>{{ league.logo }}</h5>
+    {% endif %}
+    {% endfor %}
+      
+  </div>
+</main>
+{% endblock content %}
