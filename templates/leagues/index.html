@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+  <div>
+    {% for country in countries  %}
+    <h1>{{ league.country.name }}</h1>
+    <h2>{{ country.name }}</h2>
+    <h2>{{ country.logo }}</h2>
+      
+    {% endfor %}
+  </div>
+</main>
+{% endblock content %}

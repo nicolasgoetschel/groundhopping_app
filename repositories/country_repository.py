@@ -1,11 +1,13 @@
 from db.run_sql import run_sql
 from models.country import Country
+from models.league import League
 import repositories.league_repository as league_repository
+import repositories.country_repository as country_repository
 
 # Create
 def save(country):
-    sql = "INSERT INTO countries (name, flag, leagues) VALUES (%s, %s, %s) RETURNING *"
-    values = [country.name, country.flag, country.leagues]
+    sql = "INSERT INTO countries (name, flag) VALUES (%s, %s) RETURNING *"
+    values = [country.name, country.flag]
     results = run_sql(sql, values)
     id = results[0]['id']
     country.id = id
@@ -14,15 +16,14 @@ def save(country):
 # Read
 def select_all():
     countries = []
-    
+
     sql = "SELECT * FROM countries"
     results = run_sql(sql)
-    
+
     for row in results:
-        country = Country(row['name'], row['flag'], row['leagues'], row['id'] )
+        country = Country(row['name'], row['flag'], row['id'] )
         countries.append(country)
     return countries
-
 
 def select(id):
     country = None
@@ -31,7 +32,7 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        country = Country(result['name'], result['flag'], result['leagues'], result['id'])
+        country = Country(result['name'], result['flag'], result['id'])
     return country
 
 def delete_all():

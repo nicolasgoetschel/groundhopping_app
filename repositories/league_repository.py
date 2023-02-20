@@ -5,10 +5,11 @@ import repositories.country_repository as country_repository
 
 # Create
 def save(league):
-    sql = "INSERT INTO leagues (name, logo, grounds) VALUES (%s, %s, %s) RETURNING *"
-    values = [league.name, league.logo, league.grounds]
+    sql = "INSERT INTO leagues (name, logo, country_id) VALUES (%s, %s, %s) RETURNING *"
+    values = [league.name, league.logo, league.country.id]
     results = run_sql(sql, values)
     league.id = results[0]['id']
+    return league
 
 def select_all():
     leagues = []
@@ -18,7 +19,7 @@ def select_all():
 
     for row in results:
         country = country_repository.select(row['country_id'])
-        league = League(row['name'], row['logo'], row['grounds'], row['id'] )
+        league = League(row['name'], row['logo'], country, row['id'] )
         leagues.append(league)
     return leagues
 
@@ -30,7 +31,7 @@ def select(id):
     if results:
         result = results[0]
         country = country_repository.select(result['country_id'])
-        league = League(result['name'], result['logo'], result['grounds'], result['id'])
+        league = League(result['name'], result['logo'], country, result['id'])
     return league
 
 def delete_all():

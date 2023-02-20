@@ -7,14 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Football Grounds</title>
+    <title>Groundhopping App</title>
 </head>
 <body>
     <header>
+      <h1>Groundhopping App</h1>
         <nav>
             <ul class="menu">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('countries.show_all') }}">Countries</a></li>
+                <li><a href="{{ url_for('leagues.show_all') }}">Leagues</a></li>
                 
               </ul>
             </nav>

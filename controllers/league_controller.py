@@ -1,6 +1,7 @@
 
 from flask import Blueprint, render_template, request, redirect
 from repositories import league_repository, country_repository
+from models.country import Country
 from models.league import League
 
 
@@ -15,7 +16,7 @@ def show_all():
 
 # View One
 @leagues_blueprint.route("/leagues/<league_id>/leagues/<id>")
-def show(league_id, id):
-    league = league_repository.select(id)
+def show(id):
     country = country_repository.select(league.country_id)
+    league = league_repository.select(id)
     return render_template("leagues/show.html", league=league, country=country)
