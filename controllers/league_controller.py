@@ -20,3 +20,10 @@ def show(id):
     grounds = ground_repository.select_all()
     league = league_repository.select(int(id))
     return render_template("leagues/show.html", league=league, grounds=grounds)
+
+
+# Delete One
+@leagues_blueprint.route("/leagues/<id>/delete", methods = ['POST'])
+def delete_league():
+    league_repository.delete(id)
+    return redirect ('/leagues')

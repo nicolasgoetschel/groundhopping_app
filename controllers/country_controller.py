@@ -18,3 +18,9 @@ def show(id):
     print( country.name )
     return render_template("countries/show.html", country=country, leagues=leagues)
 
+# Delete One
+@countries_blueprint.route("/countries/<id>/delete", methods = ['POST'])
+def delete_country():
+    country_repository.delete(id)
+    return redirect ('/countries')
+

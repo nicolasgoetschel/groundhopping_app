@@ -18,3 +18,10 @@ def show_all():
 def show(id):
     ground = ground_repository.select(int(id))
     return render_template("grounds/show.html", ground=ground)
+
+
+# Delete One
+@grounds_blueprint.route("/grounds/<id>/delete", methods = ['POST'])
+def delete_ground():
+    ground_repository.delete(id)
+    return redirect ('/grounds')
