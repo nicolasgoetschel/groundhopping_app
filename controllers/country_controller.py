@@ -20,7 +20,24 @@ def show(id):
 
 # Delete One
 @countries_blueprint.route("/countries/<id>/delete", methods = ['POST'])
-def delete_country():
-    country_repository.delete(id)
+def delete_country(id):
+    country_repository.delete(int(id))
     return redirect ('/countries')
+
+# New
+@countries_blueprint.route("/countries/new")
+def new_country():
+    return render_template("countries/new.html")
+
+# Create
+@countries_blueprint.route("/countries", methods = ["POST"])
+def create():
+    name = request.form["name"]
+    flag = request.form["flag"]
+    new_country = Country(name, flag)
+    country_repository.save(new_country)
+    return redirect("/countries")
+
+
+
 

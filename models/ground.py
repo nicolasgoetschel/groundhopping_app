@@ -7,3 +7,7 @@ class Ground:
         self.capacity = capacity
         self.visited = visited
         self.id = id
+
+
+    def toggle_visited(self, visited):
+        self.visited = visited

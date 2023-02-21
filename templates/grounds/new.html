@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+  <div>
+    <h1>Add a new Ground:</h1>
+    <form action="/grounds" method = "POST">
+        <label for="name">Ground Name</label>
+        <input type="text" id = "name" name = "name">
+
+        <label for="team">Team Name</label>
+        <input type="text" id = "team" name = "team">
+       
+        <label for="location">Ground Location</label>
+        <input type="text" id = "location" name = "location">
+
+        <label for="capacity">Capacity</label>
+        <input type="text" id = "capacity" name = "capacity">
+        
+        <label for="league">League</label>
+        <select name="league_id" id="league">
+          {% for league in leagues %}
+          <span>
+            <option value="{{league.id}}">{{league.name}}</option>
+          </span>
+          {% endfor %}
+        
+          <!-- <input type="hidden" name = "visited" value = "False"> -->
+          
+        
+        </select>
+
+        <input type="submit">
+    </form>
+  </div>
+</main>
+{% endblock content %}

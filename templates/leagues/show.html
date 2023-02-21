@@ -9,12 +9,24 @@
     <h4>All the {{league.name}} Grounds:</h4>
     {% for ground in grounds  %}
     {% if  league.id == ground.league.id %}
-        
     
-    <a href="/grounds/{{ground.id}}">{{ ground.name }}</a>
+    {% if ground.visited %}
+    <a href="/grounds/{{ground.id}}">{{ ground.name }} &#9989; </a>
     <h5>{{ ground.capacity }}</h5>
+    
+    {% else %}
+    
+    <a href="/grounds/{{ground.id}}">{{ ground.name }} &#10060; </a>
+    <h5>{{ ground.capacity }}</h5>
+    
+    {% endif %}
+    
     {% endif %}
     {% endfor %}
+    <a href="/grounds/new">Add a Football Ground:</a>
+    <form action="/leagues/{{league.id}}/delete" method = "POST">
+      <button>Delete the whole League</button>
+    </form>
       
   </div>
 </main>

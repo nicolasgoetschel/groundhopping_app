@@ -41,8 +41,12 @@ def delete_all():
     sql = "DELETE  FROM grounds"
     run_sql(sql)
 
-
 def delete(id):
     sql = "DELETE  FROM grounds WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+def update(ground):
+    sql = "UPDATE grounds SET (name, team, location, league_id, capacity, visited) = (%s, %s, %s, %s, %s, %s) WHERE id = %s" 
+    values = [ground.name, ground.team, ground.location, ground.league.id, ground.capacity, ground.visited, ground.id]
     run_sql(sql, values)
