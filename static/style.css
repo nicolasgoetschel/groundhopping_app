@@ -1,4 +1,40 @@
-body { 
-    /* color: greenyellow; */
+    body {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20vh 75vh 5vh;
+        font-family: arial sans-serif;
+        background: rgb(31, 27, 27);
+        color: white;
+        height: 100%;
+        margin: 0;
+        width: 100%;
+        padding: 2;
+    }
+        
+    header {
+        background: darkgreen;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem; 
+        
+    }   
 
-}
+    header > h1 > a {
+        color: white;
+        margin: 1;
+    }
+
+    header > nav > ul {
+        display: flex;
+        gap: 5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav > ul > li > a {
+        color: white;
+    }

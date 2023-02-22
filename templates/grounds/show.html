@@ -11,7 +11,7 @@
       {% else %}
       <h1>{{ ground.name }} &#10060; </h1>
       {% endif %}
-      <form action="/grounds/{{ground.id}}" method = "POST">
+      <form action="/groundss/visited/{{ground.id}}" method = "POST">
         <label for="visited">Mark if visited</label>
         <input type="checkbox" id = "visited" name = "visited" value = "true" {{"checked" if ground.visited }}>
         <input type="submit" value = "Update">
@@ -20,6 +20,7 @@
     <h2>{{ ground.team }}</h2>
     <h2>{{ ground.location }}</h2>
     <h2>{{ ground.capacity }}</h2>
+    <a href="/grounds/{{ground.id}}/edit">Edit Ground</a>
     <form action="/grounds/{{ground.id}}/delete" method = "POST">
       <button>Delete this Ground</button>
     </form>

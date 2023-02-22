@@ -11,3 +11,12 @@ class Ground:
 
     def toggle_visited(self, visited):
         self.visited = visited
+
+    def change_name(self, name):
+        self.name = name
+   
+    def change_capacity(self, capacity):
+        self.capacity = capacity
+   
+    def change_league(self, league):
+        self.league = league

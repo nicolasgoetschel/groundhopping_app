@@ -23,31 +23,31 @@ country_3 = Country('Switzerland', "flag")
 country_repository.save(country_3)
 
 # Scottish Premiership
-league_1 = League("Scottish Premiership", "logo", country_1)
+league_1 = League("Scottish Premiership", "logo", country_1, 1)
 league_repository.save(league_1)
 
 # Scottish Championship
-league_2 = League("Scottish Championship", "logo", country_1)
+league_2 = League("Scottish Championship", "logo", country_1, 2)
 league_repository.save(league_2)
 
 # English Premier League
-league_4 = League("Premier League", "logo", country_2)
+league_4 = League("Premier League", "logo", country_2, 1)
 league_repository.save(league_4)
 
 # English Championship
-league_5 = League("EFL Championship", "logo", country_2)
+league_5 = League("EFL Championship", "logo", country_2, 2)
 league_repository.save(league_5)
 
 # English League One
-league_6 = League("EFL League One", "logo", country_2)
+league_6 = League("EFL League One", "logo", country_2, 3)
 league_repository.save(league_6)
 
 # English League One
-league_7 = League("EFL League Two", "logo", country_2)
+league_7 = League("EFL League Two", "logo", country_2, 4)
 league_repository.save(league_7)
 
 # Swiss Super League
-league_8 = League("Credit Suisse Super League", "logo", country_3)
+league_8 = League("Credit Suisse Super League", "logo", country_3, 1)
 league_repository.save(league_8)
 
 

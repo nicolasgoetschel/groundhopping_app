@@ -37,8 +37,9 @@ def league():
 def create():
     name = request.form["name"]
     logo = request.form["logo"]
+    tier = request.form["tier"]
     id = request.form["country_id"]
     country = country_repository.select(id)
-    new_league = League(name, logo, country)
+    new_league = League(name, logo, country, tier)
     league_repository.save(new_league)
     return redirect("/leagues")
