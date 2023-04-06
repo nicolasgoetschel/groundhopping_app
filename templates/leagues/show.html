@@ -1,31 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<main>
-  <div>
-
-    <h1>{{ league.name }}</h1>
-    <h2>{{ league.logo }}</h2>
-    <h4>All the {{league.name}} Grounds:</h4>
+<main class = "countries_main_container">
+  <div class = "country_container">
+    
+    <h1>All the {{league.name}} Grounds:</h1>
     {% for ground in grounds  %}
     {% if  league.id == ground.league.id %}
     
     {% if ground.visited %}
-    <a href="/grounds/{{ground.id}}">{{ ground.name }} &#9989; </a>
+    <a class = "link" href="/grounds/{{ground.id}}">{{ ground.name }} &#9989; </a>
     <h5>{{ ground.capacity }}</h5>
-    
     {% else %}
-    
     <a href="/grounds/{{ground.id}}">{{ ground.name }} &#10060; </a>
     <h5>{{ ground.capacity }}</h5>
-    
     {% endif %}
-    
     {% endif %}
     {% endfor %}
-    <a href="/grounds/new">Add a Football Ground:</a>
+    <form>
+      <a class="btn-style" href="/grounds/new"><button type="button">ADD A GROUND</button></a>
+      </form>
+    <!-- <a href="/grounds/new">Add a Football Ground:</a> -->
+    <!-- <form action="/leagues/{{league.id}}/delete" method = "POST">
+      <button>Delete the whole League</button> -->
+    </form>
     <form action="/leagues/{{league.id}}/delete" method = "POST">
-      <button>Delete the whole League</button>
+      <button class="style-btn">DELETE LEAGUE</button>
     </form>
       
   </div>

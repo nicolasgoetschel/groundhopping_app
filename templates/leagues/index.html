@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<main>
-  <div>
-    {% for league in leagues  %}
-    <h1>{{ league.country.name }}</h1>
-    <a href="/leagues/{{league.id}}">
+<div class="leagues"></div>
+  {% for league in leagues  %}
+  <div class = "content">
+    <a class = "link" href="/leagues/{{league.id}}">
+      <h1>{{ league.country.name }}</h1>
     <h2>{{ league.name }}</h2>
   </a>
-    <h2>{{ league.logo }}</h2>
-      
-    {% endfor %}
-    <a href="/leagues/new">Add a League:</a>
-  </div>
-</main>
-  </div>
-</main>
-{% endblock content %}
+  
+</div>
+{% endfor %}
+{% endblock content %} -->
 
+<!-- <h2>{{ league.logo }}</h2>
