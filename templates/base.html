@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Groundhopping App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7889fd726f.js" crossorigin="anonymous"></script>
+  
+  <title>Groundhopper | About</title>
 </head>
+
 <body>
-    <header>
-      <h1><a href="{{ url_for ('home') }}">Groundhopping App</a></h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('countries.show_all') }}">Countries</a></li>
-                <li><a href="{{ url_for('leagues.show_all') }}">Leagues</a></li>
-                <li><a href="{{ url_for('grounds.show_all') }}">Grounds</a></li>
-                
-              </ul>
-            </nav>
-          </header>
-          <div class="container">
-            {% block content %}
-            {% endblock %}
-          </div>
-        
-          {%block home%}
-          {% endblock %}
-        </body>
-        </html>
+  <header class="main-header">
+    <nav class="nav main-nav">
+      <ul>
+        <li><a href="{{ url_for('home') }}" class="fa-solid fa-house"></a></li>
+        <li><a href="{{ url_for('countries.show_all') }}">Countries</a></li>
+        <li><a href="{{ url_for('leagues.show_all') }}">Leagues</a></li> 
+        <li><a href="{{ url_for('grounds.show_all') }}">Grounds</a></li>
+      </ul>
+      <h1 class="header-name">GROUNDHOPPER</h1>
+    </nav>
+
+  </header>
+  
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+    <footer class="main-footer"></footer>
+      <h3>&copyGROUNDHOPPER</h3>
+</body>
+
+</html>
