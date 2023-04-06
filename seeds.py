@@ -22,6 +22,14 @@ league_repository.save(league_1)
 league_2 = League("Scottish Championship", "logo", country_1, 2)
 league_repository.save(league_2)
 
+# Scottish 3rd
+league_16 = League("Scottish League One", "logo", country_1, 3)
+league_repository.save(league_16)
+
+# Scottish 4th
+league_17 = League("Scottish League Two", "logo", country_1, 4)
+league_repository.save(league_17)
+
 # Scottish 1st
 ground_1 = Ground('Celtic Park', 'Celtic F.C.', 'Glasgow', league_1, 60411, False)
 ground_repository.save(ground_1)
@@ -69,6 +77,50 @@ ground_21 = Ground('Ochilview Park', "Queens's Park F.C.", 'Glasgow', league_2, 
 ground_repository.save(ground_21)
 ground_22 = Ground('Balmoral Stadium', 'Cove Rangers F.C.', 'Aberdeen', league_2, 2602, False)
 ground_repository.save(ground_22)
+
+# Scottish 3rd
+ground_124 = Ground('Excelsior Stadium', 'Airdrieonians F.C.', 'Airdrie', league_16, 10101, False)
+ground_repository.save(ground_124)
+ground_125 = Ground('Recreation Park', 'Alloa Athletic F.C.', 'Alloa', league_16, 3100, False)
+ground_repository.save(ground_125)
+ground_126 = Ground('New Douglas Park', 'Clyde F.C.', 'Glasgow', league_16, 6018, False)
+ground_repository.save(ground_126)
+ground_127 = Ground('East End Park', 'Dunfermline Athletic F.C.', 'Dunfermline', league_16, 11480,  False)
+ground_repository.save(ground_127)
+ground_128 = Ground('Falkirk Stadium', 'Falkirk F.C.', 'Falkirk', league_16, 7937, False)
+ground_repository.save(ground_128)
+ground_129 = Ground('Meadowbank Stadium', 'F.C. Edinburgh', 'Edinburgh', league_16, 1280, False)
+ground_repository.save(ground_129)
+ground_130 = Ground('New Central Park', 'Kelty Hearts F.C.', 'Kelty', league_16, 2181, False)
+ground_repository.save(ground_130)
+ground_131 = Ground('Links Park', 'Montrose F.C.', 'Montrose', league_16, 4936, False)
+ground_repository.save(ground_131)
+ground_132 = Ground('Balmoor', 'Peterhead F.C.', 'Peterhead', league_16, 3150, False)
+ground_repository.save(ground_132)
+ground_133 = Ground('Palmerston Park', 'Queen of the South F.C.', 'Dumfries', league_16, 8690, False)
+ground_repository.save(ground_133)
+
+# Scottish 4th
+ground_134 = Ground('Cliftonhill', 'Albion Rovers F.C.', 'Coatbridge', league_17, 1238, False)
+ground_repository.save(ground_134)
+ground_135 = Ground('Galabank', 'Annan Athletic F.C.', 'Annan', league_17, 2504, False)
+ground_repository.save(ground_135)
+ground_136 = Ground('New Dundas Park', 'Bonnyrigg Rose Athletic F.C.', 'Bonnyrigg', league_17, 2200, False)
+ground_repository.save(ground_136)
+ground_137 = Ground('Dumbarton Football Stadium', 'Dumbarton F.C.', 'Dumbarton', league_17, 2020,  False)
+ground_repository.save(ground_137)
+ground_138 = Ground('Bayview Stadium', 'East Fife F.C.', 'Methil', league_17, 1980, False)
+ground_repository.save(ground_138)
+ground_139 = Ground('Borough Briggs', 'Elgin City F.C.', 'Elgin', league_17, 4520, False)
+ground_repository.save(ground_139)
+ground_140 = Ground('Station Park', 'Forfar Athletic F.C.', 'Forfar', league_17, 6777, False)
+ground_repository.save(ground_140)
+ground_141 = Ground('Ochilview', 'Stenhousemuir F.C.', 'Stenhousemuir', league_17, 3746, False)
+ground_repository.save(ground_141)
+ground_142 = Ground('Forthbank Stadium', 'Stirling Albion F.C.', 'Stirling', league_17, 3808, False)
+ground_repository.save(ground_142)
+ground_143 = Ground('Stair Park', 'Stranraer F.C.', 'Stranraer', league_17, 4178, False)
+ground_repository.save(ground_143)
 
 
 
