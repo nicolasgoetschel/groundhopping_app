@@ -4,10 +4,17 @@ from models.country import Country
 
 countries_blueprint = Blueprint("countries", __name__)
 
+# # View all
+# @countries_blueprint.route("/countries")
+# def show_all():
+#     countries = country_repository.select_all()
+#     return render_template("countries/index.html", countries=countries)
+
 # View all
 @countries_blueprint.route("/countries")
 def show_all():
     countries = country_repository.select_all()
+    countries = sorted(countries, key=lambda c: c.name)  # Sort the countries by name
     return render_template("countries/index.html", countries=countries)
 
 # View One
@@ -30,7 +37,7 @@ def new_country():
     return render_template("countries/new.html")
 
 # Create
-@countries_blueprint.route("/countries", methods = ["POST"])
+@countries_blueprint.route("/countries", methods=["POST"])
 def create():
     name = request.form["name"]
     flag = request.form["flag"]

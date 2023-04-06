@@ -1,4 +1,3 @@
-
 from flask import Blueprint, render_template, request, redirect
 from repositories import league_repository, ground_repository, country_repository
 from models.ground import Ground
@@ -11,6 +10,7 @@ leagues_blueprint = Blueprint("leagues", __name__)
 @leagues_blueprint.route("/leagues")
 def show_all():
     leagues = league_repository.select_all()
+    leagues = sorted(leagues, key=lambda c: c.name)  # Sort the leagues by name
     return render_template("leagues/index.html", leagues=leagues)
 
 # View One

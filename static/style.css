@@ -1,40 +1,132 @@
+    /* background-color: rgb(114, 190, 228); */
+    
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
     body {
         display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 20vh 75vh 5vh;
-        font-family: arial sans-serif;
-        background: rgb(31, 27, 27);
-        color: white;
-        height: 100%;
-        margin: 0;
-        width: 100%;
-        padding: 2;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+        background-color: rgb(8, 27, 36);
     }
-        
-    header {
-        background: darkgreen;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem; 
-        
+
+    .main-header {
+        background: url(images/IMG_1156.JPG);
+        background-size: contain;
+        padding-bottom: 25px;
+    }
+
+    a {
+        color: #dfd5d5;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        color: #fff2d5;
+        text-decoration: none;
+      }
+      
+      
+
+    .nav ul {
+        margin: 0;
+    }
+
+    .nav li {
+        display: inline;
+    }
+
+    .nav a {
+        display: inline-block;
+        padding: 1rem;
+        color: black;
+        text-decoration: none;
+        font-size: 1.5;
+    }
+
+    .nav a:hover {
+        background-color: rgba(255, 255, 255, .3);
+    }
+
+    .main-nav {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: lighter;
+        border-bottom: 1px solid rgba(255, 255, 255, .3);
+    }
+
+    .main-nav li {
+        padding: 0 5%;
+    }
+   
+    .header-name {
+        text-align: center;
+        margin: 0;
+        font-size: 4rem;
+        font-family: 'Alfa Slab One', cursive;
+        font-weight: normal;
+        color: white;
+        padding-top: 30px;   
     }   
 
-    header > h1 > a {
-        color: white;
-        margin: 1;
+    .about-header {
+        font-family: 'Alfa Slab One', cursive;
+        font-weight: normal;
+        text-align: center;
+        font-size: 2.5rem;
     }
 
-    header > nav > ul {
+    .main-footer {
+        background-color: rgb(244, 244, 255, 0.3);
+        color: white;
+        padding: .25em 0;
         display: flex;
-        gap: 5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        justify-content: center;
     }
 
-    nav > ul > li > a {
-        color: white;
+    .selectors {
+        color: black;
     }
+
+    .show-league {
+        color: #fff;
+      }
+
+    .leagues-class a {
+        display: block;
+        margin-bottom: 10px;
+      }
+      
+
+
+      .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .btn-style {
+        margin-top: 20px;
+      }
+
+      .btn-style button {
+        /* Add any custom button styles here */
+        padding: 10px 20px;
+        border: solid;
+        border-color: #fff2d5;
+        border-width: medium;
+        background-color: #dfd5d5;
+        color: rgb(8, 27, 36);
+        font-size: 14px;
+        font-weight: bolder;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .content {
+        margin: 0,1rem;
+        padding: 0,1rem;
+      }

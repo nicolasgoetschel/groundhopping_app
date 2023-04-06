@@ -30,7 +30,7 @@ league_repository.save(league_16)
 league_17 = League("Scottish League Two", "logo", country_1, 4)
 league_repository.save(league_17)
 
-# Scottish 1st
+# Scottish Premiership
 ground_1 = Ground('Celtic Park', 'Celtic F.C.', 'Glasgow', league_1, 60411, False)
 ground_repository.save(ground_1)
 ground_2 = Ground('Ibrox Stadium', 'Rangers F.C.', 'Glasgow', league_1, 50817, False)
@@ -56,7 +56,8 @@ ground_repository.save(ground_11)
 ground_12 = Ground('Victoria Park', 'Ross County F.C.', 'Dingwall', league_1, 6541, False)
 ground_repository.save(ground_12)
 
-# Scottish 2nd
+
+# Scottish Championship
 ground_13 = Ground('Dens Park', 'Dundee F.C.', 'Dundee', league_2, 11775, False)
 ground_repository.save(ground_13)
 ground_14 = Ground('Cappielow Park', 'Greenock Morton F.C.', 'Greenock', league_2, 11589, False)
@@ -121,7 +122,6 @@ ground_142 = Ground('Forthbank Stadium', 'Stirling Albion F.C.', 'Stirling', lea
 ground_repository.save(ground_142)
 ground_143 = Ground('Stair Park', 'Stranraer F.C.', 'Stranraer', league_17, 4178, False)
 ground_repository.save(ground_143)
-
 
 
 # England
@@ -189,6 +189,7 @@ ground_41 = Ground('Brentford Community Stadium', 'Brentford F.C.', 'London', le
 ground_repository.save(ground_41)
 ground_42 = Ground('Vitality Stadium', 'AFC Bournemouth', 'Bournemouth', league_4, 11364, False)
 ground_repository.save(ground_42)
+
 
 # English 2nd
 ground_43 = Ground('Stadium of Light', 'Sunderland A.F.C.', 'Sunderland', league_5, 48707, False)
@@ -398,6 +399,14 @@ country_repository.save(country_3)
 league_8 = League("Super League", "logo", country_3, 1)
 league_repository.save(league_8)
 
+# Swiss 2nd
+league_9 = League("Challenge League", "logo", country_3, 2)
+league_repository.save(league_9)
+
+# Swiss 3rd
+league_10 = League("Promotion League", "logo", country_3, 3)
+league_repository.save(league_10)
+
 # Swiss 1st
 ground_115 = Ground("St. Jakob-Park", 'FC Basel', 'Basel', league_8, 38512, False)
 ground_repository.save(ground_115)
@@ -417,6 +426,66 @@ ground_122 = Ground('Schützenwiese', 'FC Winterthur', 'Winterthur', league_8, 8
 ground_repository.save(ground_122)
 ground_123 = Ground('Cornaredo Stadium', 'FC Lugano', 'Lugano', league_8, 6330, False)
 ground_repository.save(ground_123)
+
+# Swiss 2nd
+ground_168 = Ground('Stadion Brügglifeld', 'FC Aarau', 'Aarau', league_9, 8000, False)
+ground_repository.save(ground_168)
+ground_169 = Ground('Stadio Comunale', "AC Bellinzona", 'Bellinzona', league_9, 5000, False)
+ground_repository.save(ground_169)
+ground_170 = Ground('Stade Olympique de la Pontaise', 'FC Stade Lausanne Ouchy', 'Lausanne', league_9, 8500, False)
+ground_repository.save(ground_170)
+ground_171 = Ground('Stade de la Tuilière', 'FC Lausanne-Sport', 'Lausanne', league_9, 12544, False)
+ground_repository.save(ground_171)
+ground_172 = Ground('Stade de la Maladière', 'Neuchâtel Xamax FCS', 'Neuchâtel', league_9, 12000, False)
+ground_repository.save(ground_172)
+ground_173 = Ground('LIPO Park Schaffhausen', 'FC Schaffhausen', 'Schaffhausen', league_9, 8085, False)
+ground_repository.save(ground_173)
+ground_174 = Ground("Stockhorn Arena", 'FC Thun', 'Thun', league_9, 10000, False)
+ground_repository.save(ground_174)
+ground_175 = Ground("Rheinpark Stadion", 'FC Vaduz', 'Vaduz', league_9, 7584, False)
+ground_repository.save(ground_175)
+ground_176 = Ground('Sportpark Bergholz', 'FC Wil 1900', 'Wil', league_9, 6010, False)
+ground_repository.save(ground_176)
+ground_177 = Ground('Stade Municipal', "Yverdon-Sport FC", 'Yverdon-les-Bains', league_9, 6600, False)
+ground_repository.save(ground_177)
+
+# Swiss 3rd
+ground_178 = Ground('Esp Stadium', 'FC Baden', 'Baden', league_10, 7000, False)
+ground_repository.save(ground_178)
+ground_179 = Ground('Sportanlage St. Jakob ', "FC Basel II", 'Basel', league_10, 6000, False)
+ground_repository.save(ground_179)
+ground_180 = Ground('Stade des Peupliers', 'FC Bavois', 'Bavois', league_10, 3000, False)
+ground_repository.save(ground_180)
+ground_181 = Ground('Tissot Arena', 'FC Biel-Bienne', 'Biel/Bienne', league_10, 5200, False)
+ground_repository.save(ground_181)
+ground_182 = Ground('Spitalacker', 'Breitenrain', 'Bern', league_10, 1500, False)
+ground_repository.save(ground_182)
+ground_183 = Ground('Paul-Grüninger-Stadion', 'SC Brühl', 'St. Gallen', league_10, 4200, False)
+ground_repository.save(ground_183)
+ground_184 = Ground("Stade de Bouleyres", 'SC Bulle', 'Bulle', league_10, 5000, False)
+ground_repository.save(ground_184)
+ground_185 = Ground("Stadion Eizmoos", 'SC Cham', 'Cham', league_10, 1800, False)
+ground_repository.save(ground_185)
+ground_186 = Ground('Stadio Comunale', 'FC Chiasso', 'Chiasso', league_10, 11160, False)
+ground_repository.save(ground_186)
+ground_187 = Ground('Stade de la Fontenette', "Étoile Carouge", 'Carouge', league_10, 3690, False)
+ground_repository.save(ground_187)
+ground_188 = Ground('Stadion Kleinfeld', 'SC Kriens', 'Kriens', league_10, 5360, False)
+ground_repository.save(ground_188)
+ground_189 = Ground('Sportanlagen Allmend', 'FC Luzern II', 'Luzern', league_10, 13000, False)
+ground_repository.save(ground_189)
+ground_190 = Ground('Stadion Grünfeld', 'Rapperswil-Jona', 'Rapperswil', league_10, 2500, False)
+ground_repository.save(ground_190)
+ground_191 = Ground('Sportanlage Espenmoos', 'FC St. Gallen II', 'St. Gallen', league_10, 5700, False)
+ground_repository.save(ground_191)
+ground_192 = Ground("Stade de Colovray", 'Stade Nyonnais', 'Nyon', league_10, 7200, False)
+ground_repository.save(ground_192)
+ground_193 = Ground("	Utogrund", 'YF Juventus', 'Zürich', league_10, 2850, False)
+ground_repository.save(ground_193)
+ground_194 = Ground('Neufeld', 'BSC Young Boys II', 'Bern', league_10, 14000, False)
+ground_repository.save(ground_194)
+ground_195 = Ground('Heerenschürli', "FC Zürich II", 'Zürich', league_10, 1120, False)
+ground_repository.save(ground_195)
 
 
 

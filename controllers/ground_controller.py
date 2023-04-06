@@ -10,6 +10,7 @@ grounds_blueprint = Blueprint("grounds", __name__)
 @grounds_blueprint.route("/grounds")
 def show_all():
     grounds = ground_repository.select_all()
+    grounds = sorted(grounds, key=lambda c: c.name)  # Sort the grounds by name
     return render_template("grounds/index.html", grounds=grounds)
 
 # View One
@@ -59,9 +60,9 @@ def update(id):
     update_ground.change_capacity(capacity)
     # Grab league id from the update form and then using the id to get a league object from the league repository.
     # and then use a method from the ground model to update the Ground object that we grabbed from the ground repository on line 51
-    league_id = request.form["league_id"]
-    league = league_repository.select(league_id)
-    update_ground.change_league(league)
+    # league_id = request.form["league_id"]
+    # league = league_repository.select(league_id)
+    # update_ground.change_league(league)
     # Using the ground repositorys update method to update the modified ground object in the database. 
     ground_repository.update(update_ground)
     # Redirecting back to the ground show page. 
@@ -81,20 +82,53 @@ def update_visited(id):
         # Redirecting back to the ground show page. 
         return redirect("/grounds/"+id)
 
-# Update Tier
-@grounds_blueprint.route("/groundds/tier/<id>", methods = ["Post"])
-def update_tier(id):
-    # Grab a Ground we want to update
-    update_ground = ground_repository.select(int(id))
-    # Grab league id from the update form and then using the id to get a league object from the league repository.
-    # and then use a method from the ground model to update the Ground object that we grabbed from the ground repository on line 51
-    league_id = request.form["league_id"]
-    league = league_repository.select(league_id)
-    update_ground.change_league(league)
-    # Using the ground repositorys update method to update the modified ground object in the database. 
-    ground_repository.update(update_ground)
-    # Redirecting back to the ground show page. 
-    return redirect("/grounds/"+id)        
+# Promotion Update
+@grounds_blueprint.route("/grounds/promotion/<id>", methods = ["POST"])
+def promotion(id):
+    # Grab the ground we want to update
+    ground_to_update = ground_repository.select(int(id))
+    # Grab all the leagues from the league repository
+    leagues = league_repository.select_all()
+    # Create a variable called new_league that will first be assigned the original grounds league (but this will be reasigned if it can be promoted)
+    new_league = ground_to_update.league
+    # Create a variable called promoted_tier that will hold the new tier number after promotion
+    promoted_tier = ground_to_update.league.tier - 1
+    # If the ground can be promoted, i.e. if the grounds league tier is greater than 1 then continue with the rest of this code
+    if ground_to_update.league.tier > 1:
+        # loop through the list of all leagues
+        for league in leagues:
+            # For each league in the list of leagues, if the leagues tier matches the promoted_tier and the leagues country id matches 
+            # the ground we want to updates country id then reasign the new_league variable to be that league 
+            if league.tier == promoted_tier and league.country.id == ground_to_update.league.country.id:
+                new_league = league
+
+    # update the ground we want to update with the change league method we have in our ground model with the new_league
+    ground_to_update.change_league(new_league)
+    # update the ground in our database with the repositorties update method.
+    ground_repository.update(ground_to_update)
+    return redirect("/grounds/"+id)      
+
+# Relegation Update
+@grounds_blueprint.route("/grounds/relegation/<id>", methods = ["POST"])
+def relegation(id):
+    # Grab the ground we want to update
+    ground_to_update = ground_repository.select(int(id))
+    # Grab all the leagues from the league repository
+    leagues = league_repository.select_all()
+    # Create a variable called new_league that will first be assigned the original gorunds league (but this will be reasigned if it can be relegated)
+    new_league = ground_to_update.league
+    # Create a variable called promoted_tier that will hold the new teir number after promotion
+    relegated_tier = ground_to_update.league.tier + 1
+    # loop through the list of all leagues
+    for league in leagues:
+        # For each league in the list of leagues, if the leagues tier matches the relegated_tier and the leagues country id matches the ground we want to updates country id then reasign the new_league variable to be that league 
+        if league.tier == relegated_tier and league.country.id == ground_to_update.league.country.id:
+            new_league = league
+    # update the ground we want to update with the change league method we have in our ground model with the new_league
+    ground_to_update.change_league(new_league)
+    # update the ground in our database with the repositorties update method.
+    ground_repository.update(ground_to_update)
+    return redirect("/grounds/"+id)    
 
 # Edit
 @grounds_blueprint.route("/grounds/<id>/edit", methods = ["GET"])

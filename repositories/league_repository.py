@@ -43,3 +43,19 @@ def delete(id):
     sql = "DELETE  FROM leagues WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+# def select_new_tier(tier, country):
+#     print(tier)
+#     print(country)
+#     league = None
+#     sql = "SELECT * FROM leagues WHERE country_id = %s AND tier = %s "
+#     values = [country, tier]
+#     print(values)
+#     results = run_sql(sql, values)
+#     print(result)
+#     if results:
+#         result = results[0]
+#         country = country_repository.select(result['country_id'])
+#         league = League(result['name'], result['logo'], country, result['tier'], result['id'])
+#     return league

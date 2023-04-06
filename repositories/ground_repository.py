@@ -24,6 +24,7 @@ def select_all():
         league = league_repository.select(row['league_id'])
         ground = Ground(row['name'], row['team'], row['location'], league, row['capacity'], row['visited'], row['id'])
         grounds.append(ground)
+        grounds = sorted(grounds, key=lambda x: -x.capacity)
     return grounds
 
 def select(id):
