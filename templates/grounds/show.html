@@ -1,28 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <main>
   <div>
-    
-    
     {% if ground.visited %}
     <h1>{{ ground.name }}
-      &#9989; </h1>
-      {% else %}
-      <h1>{{ ground.name }} &#10060; </h1>
-      {% endif %}
+    &#9989; </h1>
+    {% else %}
+    <h1>{{ ground.name }} &#10060; </h1>
+    {% endif %}
       <form action="/groundss/visited/{{ground.id}}" method = "POST">
-        <label for="visited">Mark if visited</label>
+        <label for="visited">VISITED?</label>
         <input type="checkbox" id = "visited" name = "visited" value = "true" {{"checked" if ground.visited }}>
-        <input type="submit" value = "Update">
+        <input type="submit" value = "YES!">
       </form>
     
-    <h2>{{ ground.team }}</h2>
-    <h2>{{ ground.location }}</h2>
-    <h2>{{ ground.capacity }}</h2>
-    <a href="/grounds/{{ground.id}}/edit">Edit Ground</a>
-    <form action="/grounds/{{ground.id}}/delete" method = "POST">
-      <button>Delete this Ground</button>
+      <h2>{{ ground.location }}</h2>
+      <h3>{{ ground.team }}</h3>
+      <h4>{{ ground.capacity }}</h4>
+
+    <h3>{{ ground.name }} is currently the home of {{ ground.team }} in the {{ ground.league.name }}</h3>
+
+     <!-- Promotion Button -->
+     <form>
+     <label for="promoted">Was {{ ground.team }} promoted?</label>
+    <form action="/grounds/promotion/{{ground.id}}" method ="POST">
+      <input type="submit" value="YES" name = "promotion">
+    </form>
+  </form>
+  
+
+     <!-- Relegation Button -->
+     <form>
+     <label for="relegated">Was {{ ground.team }} relegated?</label>
+    <form action="/grounds/relegation/{{ground.id}}" method ="POST">
+      <input type="submit" value="YES" name = "relegation">
+    </form>
+  </form>
+    
+
+     <!-- Edit Link -->
+    
+    <a><button class="style-btn" href="/grounds/{{ground.id}}/edit">EDIT GROUND</button></a>
+    <br>
+     <!-- Delete Ground Button -->
+     <form action="/grounds/{{ground.id}}/delete" method = "POST">
+      <button class="style-btn">DELETE GROUND</button>
     </form>
       
   </div>

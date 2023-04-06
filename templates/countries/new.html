@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
+      <section class="content-section container"></section>
+      <h1 class="section-header">Add a new Country:</h1>
+    
 
-<main>
-  <div>
-    <h1>Add a new Country:</h1>
+
     <form action="/countries" method = "POST">
+      <div class="new-country">
         <label for="name">Country Name</label>
         <input type="text" id = "name" name = "name">
-
-        <label for="flag">Country Flag</label>
+        <label for="name">Country Flag</label>
         <input type="text" id = "flag" name = "flag">
+      </div>
 
-        <input type="submit">
+        <input class="btn" type="submit">
     </form>
-  </div>
-</main>
-{% endblock content %}
+    
+      {% endblock content %}
+
+      <p><a href="/countries/new"><button type="button">Add a Country</button></a></p>

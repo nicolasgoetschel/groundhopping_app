@@ -4,18 +4,16 @@
 <main>
   <div>
     {% for ground in grounds  %}
-    <h1>{{ ground.league.country.name }}</h1>
+    <h5>{{ ground.league.country.name }}</h5>
     <h2>{{ ground.name }}</h2>
-    <h2>{{ ground.team }}</h2>
-    <h2>{{ ground.location }}</h2>
-    <h2>{{ ground.capacity }}</h2>
-    <h2>{{ ground.visited }}</h2>
-    <h2>{{ ground.league.name }}</h2>
-      
+    <h3>{{ ground.location }}</h3>
+    <h4>{{ ground.team }}</h4>
+    <h5>{{ ground.capacity }}</h5>
     {% endfor %}
-    <a href="/grounds/new">Add a Football Ground:</a>
-  </div>
-</main>
   </div>
 </main>
 {% endblock content %}
+
+
+
+<!-- <a class="btn-style" href="/grounds/new"><button type="button">ADD A GROUND</button></a> -->

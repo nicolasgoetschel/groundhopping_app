@@ -1,25 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<main>
-  <div>
 
-    <h1>{{ country.name }}</h1>
-    <h2>{{ country.flag }}</h2>
-    <h4>All the {{country.name}} leagues:</h4>
+  <section class="show-league">
+  <h3 class="title" >Football Leagues in {{country.name}}:</h3>
+  </section>
+
+  <section class="leagues-class">
     {% for league in leagues  %}
     {% if  country.id == league.country.id %}
-        
-    
     <a href="/leagues/{{league.id}}">{{ league.name }}</a>
-    <h5>{{ league.logo }}</h5>
     {% endif %}
+    
     {% endfor %}
-    <a href="/leagues/new">Add a League</a>
+    <form>
+    <a class="btn-style" href="/leagues/new"><button type="button">ADD A LEAGUE</button></a>
+    </form>
 
     <form action="/countries/{{country.id}}/delete" method = "POST">
-      <button>Delete Country</button>
-    </form>
-  </div>
-</main>
+      <button class="style-btn">DELETE COUNTRY</button>
+   
+  
+  </section>
+</form>
 {% endblock content %}
+
+<div class="add-new-country">
+ 
