@@ -14,44 +14,15 @@ country_repository.delete_all()
 country_1 = Country('Scotland', "flag")
 country_repository.save(country_1)
 
-# England
-country_2 = Country('England', "flag")
-country_repository.save(country_2)
-
-# Switzerland
-country_3 = Country('Switzerland', "flag")
-country_repository.save(country_3)
-
-# Scottish Premiership
+# Scottish 1st
 league_1 = League("Scottish Premiership", "logo", country_1, 1)
 league_repository.save(league_1)
 
-# Scottish Championship
+# Scottish 2nd
 league_2 = League("Scottish Championship", "logo", country_1, 2)
 league_repository.save(league_2)
 
-# English Premier League
-league_4 = League("Premier League", "logo", country_2, 1)
-league_repository.save(league_4)
-
-# English Championship
-league_5 = League("EFL Championship", "logo", country_2, 2)
-league_repository.save(league_5)
-
-# English League One
-league_6 = League("EFL League One", "logo", country_2, 3)
-league_repository.save(league_6)
-
-# English League One
-league_7 = League("EFL League Two", "logo", country_2, 4)
-league_repository.save(league_7)
-
-# Swiss Super League
-league_8 = League("Credit Suisse Super League", "logo", country_3, 1)
-league_repository.save(league_8)
-
-
-# Scottish Premiership
+# Scottish 1st
 ground_1 = Ground('Celtic Park', 'Celtic F.C.', 'Glasgow', league_1, 60411, False)
 ground_repository.save(ground_1)
 ground_2 = Ground('Ibrox Stadium', 'Rangers F.C.', 'Glasgow', league_1, 50817, False)
@@ -77,8 +48,7 @@ ground_repository.save(ground_11)
 ground_12 = Ground('Victoria Park', 'Ross County F.C.', 'Dingwall', league_1, 6541, False)
 ground_repository.save(ground_12)
 
-
-# Scottish Championship
+# Scottish 2nd
 ground_13 = Ground('Dens Park', 'Dundee F.C.', 'Dundee', league_2, 11775, False)
 ground_repository.save(ground_13)
 ground_14 = Ground('Cappielow Park', 'Greenock Morton F.C.', 'Greenock', league_2, 11589, False)
@@ -101,7 +71,28 @@ ground_22 = Ground('Balmoral Stadium', 'Cove Rangers F.C.', 'Aberdeen', league_2
 ground_repository.save(ground_22)
 
 
-# # English Premier League
+
+# England
+country_2 = Country('England', "flag")
+country_repository.save(country_2)
+
+# English 1st
+league_4 = League("Premier League", "logo", country_2, 1)
+league_repository.save(league_4)
+
+# English 2nd
+league_5 = League("EFL Championship", "logo", country_2, 2)
+league_repository.save(league_5)
+
+# English 3rd
+league_6 = League("EFL League One", "logo", country_2, 3)
+league_repository.save(league_6)
+
+# English 4th
+league_7 = League("EFL League Two", "logo", country_2, 4)
+league_repository.save(league_7)
+
+# English 1st
 ground_23 = Ground('Old Trafford', 'Manchester United F.C.', 'Manchester', league_4, 74310, False)
 ground_repository.save(ground_23)
 ground_24 = Ground('Tottenham Hotspur Stadium', "Tottenham Hotspur F.C.", 'London', league_4, 62850, False)
@@ -143,8 +134,7 @@ ground_repository.save(ground_41)
 ground_42 = Ground('Vitality Stadium', 'AFC Bournemouth', 'Bournemouth', league_4, 11364, False)
 ground_repository.save(ground_42)
 
-
-# # English Championship
+# English 2nd
 ground_43 = Ground('Stadium of Light', 'Sunderland A.F.C.', 'Sunderland', league_5, 48707, False)
 ground_repository.save(ground_43)
 ground_44 = Ground('Riverside Stadium', "Middlesbrough F.C.", 'Middlesbrough', league_5, 33746, False)
@@ -194,7 +184,7 @@ ground_repository.save(ground_65)
 ground_66 = Ground('Kenilworth Road', 'Luton Town F.C.', 'Luton', league_5, 10356, False)
 ground_repository.save(ground_66)
 
-# English League One
+# English 3rd
 ground_67 = Ground('Hillsborough', 'Sheffield Wednesday F.C.', 'Sheffield', league_6, 39732, False)
 ground_repository.save(ground_67)
 ground_68 = Ground('Pride Park', "Derby County F.C.", 'Derby', league_6, 33597, False)
@@ -244,7 +234,7 @@ ground_repository.save(ground_89)
 ground_90 = Ground('Crown Ground', 'Accrington Stanley F.C.', 'Accrington', league_6, 5450, False)
 ground_repository.save(ground_90)
 
-# English League Two
+# English 4th
 ground_91 = Ground('Valley Parade', 'Bradford City', 'Bradford', league_7, 25136, False)
 ground_repository.save(ground_91)
 ground_92 = Ground('Brunton Park', "Carlisle United F.C.", 'Carlisle', league_7, 17949, False)
@@ -294,7 +284,17 @@ ground_repository.save(ground_113)
 ground_114 = Ground('Wetherby Stadium', 'Harrogate Town A.F.C.', 'Harrogate', league_7, 5000, False)
 ground_repository.save(ground_114)
 
-# Swiss Super League
+
+
+# Switzerland
+country_3 = Country('Switzerland', "flag")
+country_repository.save(country_3)
+
+# Swiss 1st
+league_8 = League("Super League", "logo", country_3, 1)
+league_repository.save(league_8)
+
+# Swiss 1st
 ground_115 = Ground("St. Jakob-Park", 'FC Basel', 'Basel', league_8, 38512, False)
 ground_repository.save(ground_115)
 ground_116 = Ground('Wankdorf Stadion', 'BSC Young Boys', 'Bern', league_8, 32000, False)
